@@ -58,26 +58,26 @@ End
           '''%number
     return m
 
-def BoundaryCondition_Static(number):
+def BoundaryCondition_Static(n,b=2):
     s="""
 Boundary Condition %i
-    Target Boundaries(1) = 4 
+    Target Boundaries(1) = %i 
     Name = "fixed"
     Displacement 3 = 0
     Displacement 2 = 0
     Displacement 1 = 0
 End
-    """%number
+    """%(n,b)
     return s
 
-def BoundaryCondition_Load(force,number):
+def BoundaryCondition_Load(force,n,b=3):
     s="""
 Boundary Condition %i
-    Target Boundaries(1) = 3 
+    Target Boundaries(1) = %i 
     Name = "pressure(called_force)"
     Force 2 = %0.0f
 End
-    """%(number,force)
+    """%(n,b,force)
     return s
 
 def Solver_Linear_Elastic(n):
@@ -145,7 +145,7 @@ def makeSIFfile(material,force):
     header = """ 
 Header
     CHECK KEYWORDS Warn
-    Mesh DB "." "."
+    Mesh DB "." "out.mesh"
     Include Path "."
     Results Directory "."
 End

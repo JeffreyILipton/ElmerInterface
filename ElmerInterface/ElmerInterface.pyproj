@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fab0da9-caf4-49ca-8a4e-08b61c8faf13</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SIFGeneration.py</StartupFile>
+    <StartupFile>Analysis.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MeshGeneration.py">
+    <Compile Include="Analysis.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SIFGeneration.py" />
