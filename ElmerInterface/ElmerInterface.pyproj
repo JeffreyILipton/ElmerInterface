@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fab0da9-caf4-49ca-8a4e-08b61c8faf13</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ElmerInterface.py</StartupFile>
+    <StartupFile>SIFGeneration.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ElmerInterface.py" />
+    <Compile Include="MeshGeneration.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SIFGeneration.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
