@@ -1,0 +1,10 @@
+File started at: 2016/01/13 13:13:37
+ 
+Variables in columns of matrix: ./f.dat
+   1: max: displacement
+   2: max: stress_xx
+   3: max: stress_yy
+   4: max: stress_zz
+   5: max: stress_xy
+   6: max: stress_yz
+   7: max: stress_xz
