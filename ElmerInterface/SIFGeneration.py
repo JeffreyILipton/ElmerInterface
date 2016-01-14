@@ -1,62 +1,40 @@
+import xml.etree.ElementTree as ET
 
 import sys
+
+
 def getMaterial(name,number=1):
-    m=''
-    if name == 'steel':    
-        m="""
+    tree = ET.parse('MaterialDB.xml')
+    root = tree.getroot()
+    matEl = root.find(".//material[@name='%s']"%name)
+    if matEl is None or len(matEl)<0 : return ''
+    props = ["Heat_Conductivity","Heat_Capacity","Head_Expansion_Coefficent","Youngs_modulus","Poisson_ratio","Density","Sound_Speed" ]
+    vals = []
+    for prop in props:
+        propEl = matEl.find(prop)
+        if propEl is None:
+            vals.append('')
+        else:
+            vals.append(propEl.text)
+            if (prop == "Poisson_ratio"): vals.append(propEl.text)
+    #vals.insert(0,name)
+    #vals.insert(0,number)
+    m='''
 Material %i
-    Name = "Steel (carbon - generic)"
-    Heat Conductivity = 44.8
-    Youngs modulus = 200.0e9
-    Mesh Poisson ratio = 0.285
-    Heat Capacity = 1265.0
-    Density = 7850.0
-    Poisson ratio = 0.285
-    Sound speed = 5100.0
-    Heat expansion Coefficient = 13.8e-6
+    Name = "%s"
+    Heat Conductivity = %s
+    Heat Capacity = %s
+    Heat expansion Coefficient = %s
+    Youngs modulus = %s
+    Mesh Poisson ratio = %s
+    Poisson ratio = %s
+    Density = %s
+    Sound speed = %s
 End
-        """%number
-    elif name == 'aluminium':
-        m="""
-Material %i
-    Name = "Aluminium (generic)"
-    Heat Conductivity = 237.0
-    Youngs modulus = 70.0e9
-    Mesh Poisson ratio = 0.35
-    Heat Capacity = 897.0
-    Density = 2700.0
-    Poisson ratio = 0.35
-    Sound speed = 5000.0
-    Heat expansion Coefficient = 23.1e-6
-End
-          """%number
-    elif name == 'polycarbonate':
-        m='''
-Material %i
-    Name = "Polycarbonate (generic)"
-    Heat Conductivity = 0.205
-    Youngs modulus = 2.2e9
-    Mesh Poisson ratio = 0.37
-    Heat Capacity = 1250.0
-    Density = 1220.0
-    Poisson ratio = 0.37
-    Heat expansion Coefficient = 67.0e-6
-End
-        '''%number
-    elif name == 'pvc':
-        m='''
-Material %i
-    Name = "Polyvinyl chloride (generic)"
-    Heat Conductivity = 0.16
-    Youngs modulus = 3100.0e6
-    Mesh Poisson ratio = 0.41
-    Heat Capacity = 900.0
-    Density = 1380.0
-    Poisson ratio = 0.41
-    Heat expansion Coefficient = 80.0e-6
-End
-          '''%number
-    return m
+       '''%(number,name,vals[0],vals[1],vals[2],vals[3],vals[4],vals[5],vals[6],vals[7])
+    return m   
+    
+    
 
 def BoundaryCondition_Static(n,b=2):
     s="""

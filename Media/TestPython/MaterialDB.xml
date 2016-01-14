@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Materials>
+  <material name="steel">
+    <Heat_Conductivity>44.8</Heat_Conductivity>
+    <Heat_Capacity>1265.0</Heat_Capacity>
+    <Head_Expansion_Coefficent>13.8e-6</Head_Expansion_Coefficent>
+    <Youngs_modulus>200.0e9</Youngs_modulus>
+    <Poisson_ratio>0.285</Poisson_ratio>
+    <Density>7850.0</Density>
+    <Sound_Speed>5100.0</Sound_Speed>
+  </material>
+  <material name="PVC">
+    <Heat_Conductivity>0.16</Heat_Conductivity>
+    <Heat_Capacity>900.0</Heat_Capacity>
+    <Head_Expansion_Coefficent>80.0e-6</Head_Expansion_Coefficent>
+    <Youngs_modulus>3100.0e6</Youngs_modulus>
+    <Poisson_ratio>0.41</Poisson_ratio>
+    <Density>1380.0</Density>
+    <Sound_Speed>2380.0</Sound_Speed>
+  </material>
+  <material name="polycarbonate">
+    <Heat_Conductivity>0.205</Heat_Conductivity>
+    <Heat_Capacity>1250.0</Heat_Capacity>
+    <Head_Expansion_Coefficent>67.0e-6</Head_Expansion_Coefficent>
+    <Youngs_modulus>2.2e9</Youngs_modulus>
+    <Poisson_ratio>0.37</Poisson_ratio>
+    <Density>1220.0</Density>
+    <Sound_Speed>2270.0</Sound_Speed>
+  </material>
+  <material name="aluminium">
+    <Heat_Conductivity>237.0</Heat_Conductivity>
+    <Heat_Capacity>897.0</Heat_Capacity>
+    <Head_Expansion_Coefficent>23.1e-6</Head_Expansion_Coefficent>
+    <Youngs_modulus>70.0e9</Youngs_modulus>
+    <Poisson_ratio>0.35</Poisson_ratio>
+    <Density>2700.0</Density>
+    <Sound_Speed>5000.0</Sound_Speed>
+  </material>
+</Materials>
