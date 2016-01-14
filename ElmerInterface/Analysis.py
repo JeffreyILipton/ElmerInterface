@@ -53,8 +53,7 @@ def processGeometrey(stlfile,material,force):
     if good:
         good = RunSolver()
     if good:
-        readDataFile()
-        return True
+        return readDataFile()
     else:
         return False
 
