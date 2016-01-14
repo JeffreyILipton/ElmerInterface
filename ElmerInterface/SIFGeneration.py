@@ -197,8 +197,8 @@ End
     """
     material1 = getMaterial(material,1)
     solver1 = Solver_Linear_Elastic(1)
-    force_condition   = BoundaryCondition_Load(force,1)
-    static_condition  = BoundaryCondition_Static(2)
+    force_condition   = BoundaryCondition_Load(force,1,2)
+    static_condition  = BoundaryCondition_Static(2,3)
     output  = Solver_save_scalars(2,3)
 
     filestring = header+simulation+constants+body1+material1+equation+solver1+force_condition+static_condition+output
